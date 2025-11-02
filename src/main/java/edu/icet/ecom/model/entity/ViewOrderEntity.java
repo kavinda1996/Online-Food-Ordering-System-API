@@ -5,19 +5,17 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 
-import java.time.LocalDate;
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
 @Getter
 @Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "foodItem")
-public class FoodItemEntity {
+@Table(name = "orderDetail")
+public class ViewOrderEntity {
     @Id
-    private String foodID;
+    private String orderID;
+    private String customerID;
     private String foodName;
     private double price;
-    private int stock;
-    private LocalDate expiryDate;
 }

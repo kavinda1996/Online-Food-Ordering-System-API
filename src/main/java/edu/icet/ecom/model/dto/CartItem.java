@@ -1,6 +1,13 @@
 package edu.icet.ecom.model.dto;
 
-public class PlaceOrder {
+import lombok.*;
+
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+public class CartItem {
     private String orderID;
     private String foodID;
     private int qty;
