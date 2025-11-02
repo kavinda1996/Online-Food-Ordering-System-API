@@ -9,7 +9,7 @@ public interface CustomerService {
 
     List<Customer> getAll();
 
-    void deleteCustomer(Integer id);
+    void deleteCustomer(String id);
 
     void updateCustomer(Customer customer);
 }
