@@ -13,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin
 public class CustomerController {
-//    http://localhost:8080/customer/add
+
 
     final CustomerService service;
     @PostMapping("/add")
