@@ -1,4 +1,6 @@
 package edu.icet.ecom.service.impl;
 
-public class FoodItemServiceImpl {
+import edu.icet.ecom.service.FoodItemService;
+
+public class FoodItemServiceImpl implements FoodItemService {
 }
