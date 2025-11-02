@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/online_food_Ordering_system
+    url: jdbc:mysql://localhost:3306/online_food_ordering_system
     username: root
     password: 1234
 

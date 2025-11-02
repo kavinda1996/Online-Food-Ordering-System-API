@@ -1,6 +1,6 @@
 package edu.icet.ecom.service.impl;
 
-import edu.icet.ecom.model.Customer;
+import edu.icet.ecom.model.dto.Customer;
 import edu.icet.ecom.model.entity.CustomerEntity;
 import edu.icet.ecom.repository.CustomerRepository;
 import edu.icet.ecom.service.CustomerService;
@@ -14,8 +14,10 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class CustomerServiceImpl implements CustomerService {
+
     final CustomerRepository repository;
     final ModelMapper mapper;
+
     @Override
     public void addCustomer(Customer customer) {
         repository.save(mapper.map(customer, CustomerEntity.class));
@@ -34,12 +36,28 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void deleteCustomer(String id) {
+    public void deleteCustomer(Integer id) {
         repository.deleteById(id);
     }
 
     @Override
     public void updateCustomer(Customer customer) {
         repository.save(mapper.map(customer, CustomerEntity.class));
+    }
+
+    @Override
+    public Customer searchById(Integer id) {
+        return mapper.map(repository.findById(id), Customer.class);
+    }
+
+    @Override
+    public List<Customer> searchByName(String name) {
+        List<CustomerEntity> byName = repository.findByName(name);
+        List<Customer> customerList = new ArrayList<>();
+
+        byName.forEach(customerEntity -> {
+            customerList.add(mapper.map(customerEntity, Customer.class));
+        });
+        return customerList;
     }
 }

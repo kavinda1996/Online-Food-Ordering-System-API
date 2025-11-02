@@ -3,17 +3,18 @@ package edu.icet.ecom.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
+
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Getter
-@Setter
-@Table
+@Entity
+@Table(name = "customer")
 public class CustomerEntity {
-    private String customerName;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String customerID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String name;
     private String address;
+    private Double salary;
 }

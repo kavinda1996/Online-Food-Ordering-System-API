@@ -1,6 +1,6 @@
 package edu.icet.ecom.service;
 
-import edu.icet.ecom.model.Customer;
+import edu.icet.ecom.model.dto.Customer;
 
 import java.util.List;
 
@@ -9,7 +9,13 @@ public interface CustomerService {
 
     List<Customer> getAll();
 
-    void deleteCustomer(String id);
+    void deleteCustomer(Integer id);
 
     void updateCustomer(Customer customer);
+
+    Customer searchById(Integer id);
+
+    List<Customer> searchByName(String name);
+
+
 }
